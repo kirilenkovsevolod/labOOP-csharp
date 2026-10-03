@@ -1,19 +1,16 @@
 ﻿using System;
 
-    class Program
+class Program
+{
+
+    static void Main(string[] args)
     {
-    static void PrintRes(double x,double sn,double se,double y,int i)
-    {
-        Console.WriteLine($"X{i+1} = {x}  SN{i+1} = {sn}  SE{i+1} = {se}  Y{i+1} = {y}\n");
-    }
-        static void Main(string[] args)
-        {
         const double minx = 0.1, maxx = 0.8;
         const int cntx = 10;
         const int n = 3;
         const double eps = 0.0001;
         const double step = (maxx - minx) / cntx;
-        
+
         for (int i = 0; i <= cntx; i++) //взял 11 точек
         {
             double x = minx + i * step;
@@ -34,7 +31,7 @@
                 je++;
             }
             double y = 0.25 * Math.Log((1 + x) / (1 - x)) + 0.5 * Math.Atan(x);  //вычисляем Y
-            PrintRes(x, sn, se, y,i);
-        }
+            Console.WriteLine($"X{i + 1} = {x}  SN{i + 1} = {sn}  SE{i + 1} = {se}  Y{i + 1} = {y}\n"); ;
         }
     }
+}
